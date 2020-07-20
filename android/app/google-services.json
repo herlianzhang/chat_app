@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "69447395991",
+    "firebase_url": "https://chat-app-8bf49.firebaseio.com",
+    "project_id": "chat-app-8bf49",
+    "storage_bucket": "chat-app-8bf49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69447395991:android:e28b63b518e73e122557d2",
+        "android_client_info": {
+          "package_name": "com.latihangoding.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69447395991-mg5d9rsoeo1n71u6n1ii48r1gosfa4bf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhKq0JV5k3KmqSBKXRKgyp31YtUXu7_Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69447395991-mg5d9rsoeo1n71u6n1ii48r1gosfa4bf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
