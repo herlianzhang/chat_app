@@ -5,15 +5,22 @@ class Message extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: Firestore.instance.collection('chat').snapshots(),
+      stream: Firestore.instance
+          .collection('chat')
+          .orderBy(
+            'createdAt',
+            descending: true,
+          )
+          .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
         }
         final chatDocs = snapshot.data.documents;
         return ListView.builder(
+          reverse: true,
           itemBuilder: (context, index) {
-            return null; // start here.
+            return Text(chatDocs[index]['text']); // start here.
           },
           itemCount: chatDocs.length,
         );
