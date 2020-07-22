@@ -1,9 +1,15 @@
 import 'package:chat_app/widgets/chat/message_bubble.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
-class Message extends StatelessWidget {
+class Message extends StatefulWidget {
+  @override
+  _MessageState createState() => _MessageState();
+}
+
+class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -35,5 +41,27 @@ class Message extends StatelessWidget {
         },
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final fbm = FirebaseMessaging();
+    fbm.requestNotificationPermissions();
+    fbm.configure(
+      onMessage: (message) {
+        print('from onMessage: $message');
+        return;
+      },
+      onResume: (message) {
+        print('from onResume: $message');
+        return;
+      },
+      onLaunch: (message) {
+        print('from onLaunch: $message');
+        return;
+      },
+    );
+    fbm.subscribeToTopic('chat');
   }
 }

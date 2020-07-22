@@ -15,6 +15,7 @@ class ChatScreen extends StatelessWidget {
               Icons.more_vert,
               color: Theme.of(context).primaryIconTheme.color,
             ),
+            underline: Container(),
             items: [
               DropdownMenuItem(
                 child: Container(
@@ -27,6 +28,7 @@ class ChatScreen extends StatelessWidget {
                   ),
                 ),
                 value: 'logout',
+
               ),
             ],
             onChanged: (value) {
